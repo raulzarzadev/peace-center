@@ -1,0 +1,54 @@
+---
+const recommendations = [
+	{
+		title: "Playa Balandra",
+		category: "Playa",
+		description:
+			"Conocida como una de las playas más hermosas de México, famosa por sus aguas turquesas y tranquilas.",
+		image:
+			"https://images.unsplash.com/photo-1629165355607-06df4df4237f?q=80&w=2670&auto=format&fit=crop",
+	},
+	{
+		title: "Malecón de La Paz",
+		category: "Paseo",
+		description:
+			"Ideal para caminatas al atardecer, andar en bicicleta y disfrutar de la gastronomía local.",
+		image:
+			"https://images.unsplash.com/photo-1569949381669-ecf31fd74f4c?q=80&w=2574&auto=format&fit=crop",
+	},
+	{
+		title: "Isla Espíritu Santo",
+		category: "Tour",
+		description:
+			"Patrimonio de la Humanidad. Nado con lobos marinos y arrecifes de coral impresionantes.",
+		image:
+			"https://images.unsplash.com/photo-1544558582-b3659dc6c8d1?q=80&w=2674&auto=format&fit=crop",
+	},
+];
+---
+
+<section id="recomendaciones" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-stone-900 sm:text-4xl">Descubre La Paz</h2>
+      <p class="mt-4 text-xl text-stone-600">Nuestras recomendaciones favoritas para tu visita.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {recommendations.map((rec) => (
+        <div class="relative group overflow-hidden rounded-2xl h-80">
+          <img 
+            src={rec.image} 
+            alt={rec.title} 
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/40 to-transparent flex flex-col justify-end p-6">
+            <span class="text-teal-400 text-sm font-bold uppercase tracking-wider mb-2">{rec.category}</span>
+            <h3 class="text-2xl font-bold text-white mb-2">{rec.title}</h3>
+            <p class="text-stone-300 text-sm line-clamp-3">{rec.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
