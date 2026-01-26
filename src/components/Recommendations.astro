@@ -18,16 +18,27 @@ const recommendations = RECOMMENDATIONS_DATA[lang];
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12 bg-white/5 p-8 rounded-3xl backdrop-blur-sm border border-white/10 shadow-2xl">
-      {recommendations.map((group) => (
+      {[
+        { key: 'to_do', label: t('recommendations.todo') },
+        { key: 'drink_or_food', label: t('recommendations.eatdrink') },
+        { key: 'neighborhood', label: t('recommendations.neighborhood') }
+      ].map((cat) => (
         <div class="flex flex-col">
           <h3 class="text-2xl font-bold text-teal-400 mb-6 font-handwritten uppercase tracking-wider border-b-2 border-teal-400/30 pb-2 inline-block self-start transform -rotate-2">
-            {group.category}
+            {cat.label}
           </h3>
           <ul class="space-y-4">
-            {group.items.map((item) => (
+            {recommendations.filter((item) => item.category === cat.key).map((item) => (
               <li class="flex items-start group">
                 <span class="text-teal-500 mr-2 transform group-hover:scale-125 transition-transform duration-300">•</span>
-                <span class="text-lg text-stone-300 group-hover:text-white transition-colors duration-300 font-handwritten-body">{item}</span>
+                <a 
+                    href={item.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="text-lg text-stone-300 group-hover:text-white transition-colors duration-300 font-handwritten-body hover:underline decoration-teal-500/50 underline-offset-4"
+                >
+                    {item.title}
+                </a>
               </li>
             ))}
           </ul>
