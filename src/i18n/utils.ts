@@ -365,54 +365,80 @@ export const SERVICES_DATA = {
 export const RECOMMENDATIONS_DATA = {
 	es: [
 		{
-			title: "Playa Balandra",
-			category: "Playa",
-			description:
-				"Conocida como una de las playas más hermosas de México, famosa por sus aguas turquesas y tranquilas.",
-			image:
-				"https://images.unsplash.com/photo-1629165355607-06df4df4237f?q=80&w=2670&auto=format&fit=crop",
+			category: "Hacer",
+			items: [
+				"Tiburón Ballena",
+				"Isla Espíritu Santo",
+				"Balandra via hiking",
+				"Cerro de la Calavera",
+				"Malecón al atardecer",
+				"Sandboard Mogote",
+			],
 		},
 		{
-			title: "Malecón de La Paz",
-			category: "Paseo",
-			description:
-				"Ideal para caminatas al atardecer, andar en bicicleta y disfrutar de la gastronomía local.",
-			image:
-				"https://images.unsplash.com/photo-1569949381669-ecf31fd74f4c?q=80&w=2574&auto=format&fit=crop",
+			category: "Comer/Beber",
+			items: [
+				"Gratitude Coffee",
+				"Bar Dos Mundos",
+				"Made",
+				"Taco Fish",
+				"Claros Fish Jr",
+				"Toro Güero",
+				"Tacos del Estadio",
+				"Fuego y Leña",
+				"El buen bar",
+				"Tacos perrones",
+			],
 		},
 		{
-			title: "Isla Espíritu Santo",
-			category: "Tour",
-			description:
-				"Patrimonio de la Humanidad. Nado con lobos marinos y arrecifes de coral impresionantes.",
-			image:
-				"https://images.unsplash.com/photo-1544558582-b3659dc6c8d1?q=80&w=2674&auto=format&fit=crop",
+			category: "Del Barrio",
+			items: [
+				"Atelier 21",
+				"Changarro de Doña Licha",
+				"Aqua fitness purificadora",
+				"Pescaderia La Gaviota",
+				"Lavalatte",
+				"Tortillería La Paz",
+			],
 		},
 	],
 	en: [
 		{
-			title: "Balandra Beach",
-			category: "Beach",
-			description:
-				"Known as one of the most beautiful beaches in Mexico, famous for its turquoise and calm waters.",
-			image:
-				"https://images.unsplash.com/photo-1629165355607-06df4df4237f?q=80&w=2670&auto=format&fit=crop",
+			category: "To Do",
+			items: [
+				"Whale Shark",
+				"Espiritu Santo Island",
+				"Balandra via hiking",
+				"Cerro de la Calavera",
+				"Malecon at sunset",
+				"Sandboard Mogote",
+			],
 		},
 		{
-			title: "La Paz Malecon",
-			category: "Walk",
-			description:
-				"Ideal for sunset walks, biking, and enjoying local gastronomy.",
-			image:
-				"https://images.unsplash.com/photo-1569949381669-ecf31fd74f4c?q=80&w=2574&auto=format&fit=crop",
+			category: "Eat/Drink",
+			items: [
+				"Gratitude Coffee",
+				"Bar Dos Mundos",
+				"Made",
+				"Taco Fish",
+				"Claros Fish Jr",
+				"Toro Güero",
+				"Tacos del Estadio",
+				"Fuego y Leña",
+				"El buen bar",
+				"Tacos perrones",
+			],
 		},
 		{
-			title: "Espiritu Santo Island",
-			category: "Tour",
-			description:
-				"World Heritage Site. Swim with sea lions and impressive coral reefs.",
-			image:
-				"https://images.unsplash.com/photo-1544558582-b3659dc6c8d1?q=80&w=2674&auto=format&fit=crop",
+			category: "Neighborhood",
+			items: [
+				"Atelier 21",
+				"Changarro de Doña Licha (Local Store)",
+				"Aqua fitness purificadora (Water)",
+				"Pescaderia La Gaviota (Fish Market)",
+				"Lavalatte (Laundry/Cafe)",
+				"Tortillería La Paz",
+			],
 		},
 	],
 };
