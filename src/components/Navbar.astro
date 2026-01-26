@@ -1,10 +1,19 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const links = [
-	{ name: "Inicio", href: "#home" },
-	{ name: "Servicios", href: "#servicios" },
-	{ name: "Recomendaciones", href: "#recomendaciones" },
-	{ name: "Contacto", href: "#contacto" },
+  { name: t('nav.home'), href: "#home" },
+  { name: t('nav.services'), href: "#servicios" },
+  { name: t('nav.recommendations'), href: "#recomendaciones" },
+  { name: t('nav.contact'), href: "#contacto" },
 ];
+
+const nextLang = lang === 'es' ? 'en' : 'es';
+const nextLangLabel = lang === 'es' ? 'EN' : 'ES';
+const nextLangHref = lang === 'es' ? '/en' : '/';
 ---
 
 <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
@@ -13,7 +22,7 @@ const links = [
       <div class="flex-shrink-0 flex items-center">
         <span class="text-2xl font-bold text-teal-700">Peace Center</span>
       </div>
-      <div class="hidden md:ml-6 md:flex md:space-x-8">
+      <div class="hidden md:ml-6 md:flex md:space-x-8 items-center">
         {links.map((link) => (
           <a
             href={link.href}
@@ -22,7 +31,12 @@ const links = [
             {link.name}
           </a>
         ))}
+        
         <div class="flex items-center gap-2">
+            <a href={nextLangHref} class="text-stone-500 font-bold hover:text-teal-600 transition-colors text-sm border border-stone-300 rounded px-2 py-1">
+                {nextLangLabel}
+            </a>
+
             <a href="https://www.instagram.com/peacecenterlpz" target="_blank" class="text-stone-600 hover:text-pink-600 transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             </a>
@@ -31,13 +45,16 @@ const links = [
               target="_blank"
               class="bg-teal-600 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-teal-700 transition"
             >
-              Reservar
+              {t('nav.book')}
             </a>
         </div>
       </div>
       
       <!-- Mobile menu button placeholder -->
-      <div class="flex items-center md:hidden">
+      <div class="flex items-center md:hidden gap-4">
+        <a href={nextLangHref} class="text-stone-500 font-bold hover:text-teal-600 transition-colors text-sm border border-stone-300 rounded px-2 py-1">
+            {nextLangLabel}
+        </a>
         <a 
           href="https://wa.me/526121539390" 
           class="bg-teal-600 text-white p-2 rounded-full"

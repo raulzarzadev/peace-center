@@ -1,5 +1,9 @@
 ---
 import heroImage from "../assets/peace-center.webp";
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="home" class="relative bg-stone-900 h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
@@ -14,10 +18,10 @@ import heroImage from "../assets/peace-center.webp";
 
   <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
     <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg tracking-tight">
-      Tu Oasis en <span class="text-teal-400">La Paz</span>
+      {t('hero.title')} <span class="text-teal-400">La Paz</span>
     </h1>
     <p class="text-xl text-stone-100 mb-8 max-w-2xl mx-auto drop-shadow-md">
-      Disfruta de la tranquilidad del desierto junto al mar. RV Park con servicios completos y cómodas habitaciones para tu estancia.
+      {t('hero.subtitle')}
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a 
@@ -25,8 +29,8 @@ import heroImage from "../assets/peace-center.webp";
         target="_blank"
         class="bg-teal-600 hover:bg-teal-700 text-white text-xl font-bold py-5 px-10 rounded-full transition-all transform hover:scale-110 shadow-xl flex items-center justify-center gap-3"
       >
-        <span>Reservar por WhatsApp</span>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+        <span>{t('hero.cta_whatsapp')}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-currentColor" class="w-8 h-8">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
         </svg>
 
@@ -45,7 +49,7 @@ import heroImage from "../assets/peace-center.webp";
         href="#servicios" 
         class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold py-3 px-8 rounded-full transition-all flex items-center justify-center"
       >
-        Ver Servicios
+        {t('hero.cta_services')}
       </a>
     </div>
   </div>

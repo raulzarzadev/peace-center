@@ -1,4 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const currentYear = new Date().getFullYear();
 ---
 
@@ -8,13 +12,12 @@ const currentYear = new Date().getFullYear();
             <div>
                 <h3 class="text-white text-lg font-bold mb-4">Peace Center</h3>
                 <p class="text-sm leading-relaxed">
-                    Tu hogar lejos de casa en La Paz, Baja California Sur. 
-                    Un espacio diseñado para viajeros en busca de tranquilidad y confort.
+                    {t('footer.about')}
                 </p>
             </div>
             
             <div>
-                <h3 class="text-white text-lg font-bold mb-4">Contacto</h3>
+                <h3 class="text-white text-lg font-bold mb-4">{t('footer.contact')}</h3>
                 <ul class="space-y-2 text-sm">
                     <li class="flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-teal-500">
@@ -49,17 +52,17 @@ const currentYear = new Date().getFullYear();
             </div>
 
             <div>
-                 <h3 class="text-white text-lg font-bold mb-4">Enlaces Rápidos</h3>
+                 <h3 class="text-white text-lg font-bold mb-4">{t('footer.links')}</h3>
                  <ul class="space-y-2">
-                    <li><a href="#home" class="hover:text-white transition">Inicio</a></li>
-                    <li><a href="#servicios" class="hover:text-white transition">Servicios</a></li>
-                    <li><a href="#recomendaciones" class="hover:text-white transition">Recomendaciones</a></li>
+                    <li><a href="#home" class="hover:text-white transition">{t('nav.home')}</a></li>
+                    <li><a href="#servicios" class="hover:text-white transition">{t('nav.services')}</a></li>
+                    <li><a href="#recomendaciones" class="hover:text-white transition">{t('nav.recommendations')}</a></li>
                  </ul>
             </div>
         </div>
         
         <div class="border-t border-stone-800 mt-12 pt-8 text-center text-xs">
-            <p>&copy; {currentYear} Peace Center. Todos los derechos reservados.</p>
+            <p>&copy; {currentYear} Peace Center. {t('footer.rights')}</p>
         </div>
     </div>
 </footer>

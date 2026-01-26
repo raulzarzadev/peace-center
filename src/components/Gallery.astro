@@ -5,6 +5,10 @@ import img3 from "../assets/IMG_4481.webp";
 import img4 from "../assets/IMG_4483.webp";
 import img5 from "../assets/IMG_4499.webp";
 import img6 from "../assets/IMG_4509.webp";
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const images = [img1.src, img2.src, img3.src, img4.src, img5.src, img6.src];
 ---
@@ -12,8 +16,8 @@ const images = [img1.src, img2.src, img3.src, img4.src, img5.src, img6.src];
 <section class="py-20 bg-stone-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-stone-900 sm:text-4xl">Galería</h2>
-        <p class="mt-4 text-xl text-stone-600">Un vistazo a nuestro pequeño paraíso.</p>
+        <h2 class="text-3xl font-bold text-stone-900 sm:text-4xl">{t('gallery.title')}</h2>
+        <p class="mt-4 text-xl text-stone-600">{t('gallery.subtitle')}</p>
       </div>
 
       <div class="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
