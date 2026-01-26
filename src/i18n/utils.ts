@@ -98,10 +98,26 @@ export const TOURS_DATA = {
 		{
 			title: "Renta de Van",
 			description:
-				"Ideal para grupos o familias grandes. Comodidad y espacio para todos.",
+				"Ideal para acampar sin preocupaciones. Comodidad y espacio para 2-3 personas. Cocina equipada.y muchas comididades.",
 			icon: "van",
 			image:
 				"https://images.unsplash.com/photo-1558284564-967d71b3e80e?q=80&w=2670&auto=format&fit=crop",
+		},
+		{
+			title: "Tour Dunas del Mogote 4x4",
+			description:
+				"Aventura todo terreno explorando las impresionantes dunas del Mogote y disfrutando de vistas espectaculares.",
+			icon: "jeep",
+			image:
+				"https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2670&auto=format&fit=crop",
+		},
+		{
+			title: "Renta de Sandboard",
+			description:
+				"Deslízate por las dunas a tu propio ritmo. Diversión garantizada para todas las edades.",
+			icon: "board",
+			image:
+				"https://images.unsplash.com/photo-1543867629-23f269a21287?q=80&w=2670&auto=format&fit=crop",
 		},
 		{
 			title: "Tour Bahía Magdalena",
@@ -120,6 +136,22 @@ export const TOURS_DATA = {
 				"https://images.unsplash.com/photo-1560275619-4662e36fa65c?q=80&w=2670&auto=format&fit=crop",
 		},
 		{
+			title: "Natación Aguas Abiertas",
+			description:
+				"Explora el Mar de Cortés nadando con guía experto y apoyo de seguridad.",
+			icon: "swim",
+			image:
+				"https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?q=80&w=2670&auto=format&fit=crop",
+		},
+		{
+			title: "Clases de Natación",
+			description:
+				"Aprende o mejora tu técnica en el mar o alberca. Para principiantes y avanzados.",
+			icon: "swim-school",
+			image:
+				"https://images.unsplash.com/photo-1530549387789-4c1017266635?q=80&w=2670&auto=format&fit=crop",
+		},
+		{
 			title: "Isla Espíritu Santo",
 			description:
 				"Snorkel con lobos marinos, arrecifes coloridos y playas vírgenes en este Patrimonio Mundial.",
@@ -134,6 +166,30 @@ export const TOURS_DATA = {
 			icon: "anchor",
 			image:
 				"https://images.unsplash.com/photo-1629322744385-d667c210d70b?q=80&w=2670&auto=format&fit=crop",
+		},
+		{
+			title: "Clases de Ciclismo",
+			description:
+				"Mejora tus habilidades sobre la bici, técnica de montaña o ruta.",
+			icon: "bike-school",
+			image:
+				"https://images.unsplash.com/photo-1576673442511-7e39b6545c87?q=80&w=2688&auto=format&fit=crop",
+		},
+		{
+			title: "Tour Histórico en Bici",
+			description:
+				"Recorre el centro histórico y el malecón conociendo las leyendas y la historia de La Paz.",
+			icon: "bike-history",
+			image:
+				"https://images.unsplash.com/photo-1558237305-b040003b30d3?q=80&w=2670&auto=format&fit=crop",
+		},
+		{
+			title: "Tour Gastronómico en Bici",
+			description:
+				"Prueba los sabores locales: tacos de pescado, mariscos y más, recorriendo la ciudad en bicicleta.",
+			icon: "bike-food",
+			image:
+				"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=2581&auto=format&fit=crop",
 		},
 	],
 	en: [
@@ -156,10 +212,26 @@ export const TOURS_DATA = {
 		{
 			title: "Van Rental",
 			description:
-				"Ideal for groups or big families. Comfort and space for everyone.",
+				"Ideal for camping without worries. Comfort and space for 2-3 people. Equipped kitchen and many amenities.",
 			icon: "van",
 			image:
 				"https://images.unsplash.com/photo-1558284564-967d71b3e80e?q=80&w=2670&auto=format&fit=crop",
+		},
+		{
+			title: "Mogote Dunes 4x4 Tour",
+			description:
+				"Off-road adventure exploring the impressive Mogote dunes with spectacular views.",
+			icon: "jeep",
+			image:
+				"https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2670&auto=format&fit=crop",
+		},
+		{
+			title: "Sandboard Rental",
+			description:
+				"Slide down the dunes at your own pace. Guaranteed fun for all ages.",
+			icon: "board",
+			image:
+				"https://images.unsplash.com/photo-1543867629-23f269a21287?q=80&w=2670&auto=format&fit=crop",
 		},
 		{
 			title: "Magdalena Bay Tour",
@@ -178,6 +250,22 @@ export const TOURS_DATA = {
 				"https://images.unsplash.com/photo-1560275619-4662e36fa65c?q=80&w=2670&auto=format&fit=crop",
 		},
 		{
+			title: "Open Water Swimming",
+			description:
+				"Explore the Sea of Cortez swimming with expert guidance and safety support.",
+			icon: "swim",
+			image:
+				"https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?q=80&w=2670&auto=format&fit=crop",
+		},
+		{
+			title: "Swimming Lessons",
+			description:
+				"Learn or improve your technique in the sea or pool. For beginners and advanced swimmers.",
+			icon: "swim-school",
+			image:
+				"https://images.unsplash.com/photo-1530549387789-4c1017266635?q=80&w=2670&auto=format&fit=crop",
+		},
+		{
 			title: "Espiritu Santo Island",
 			description:
 				"Snorkel with sea lions, colorful reefs, and virgin beaches in this World Heritage Site.",
@@ -193,6 +281,29 @@ export const TOURS_DATA = {
 			image:
 				"https://images.unsplash.com/photo-1629322744385-d667c210d70b?q=80&w=2670&auto=format&fit=crop",
 		},
+		{
+			title: "Cycling Lessons",
+			description: "Improve your bike skills, mountain or road technique.",
+			icon: "bike-school",
+			image:
+				"https://images.unsplash.com/photo-1576673442511-7e39b6545c87?q=80&w=2688&auto=format&fit=crop",
+		},
+		{
+			title: "History Bike Tour",
+			description:
+				"Ride through the historic center and boardwalk learning about the legends and history of La Paz.",
+			icon: "bike-history",
+			image:
+				"https://images.unsplash.com/photo-1558237305-b040003b30d3?q=80&w=2670&auto=format&fit=crop",
+		},
+		{
+			title: "Foodie Bike Tour",
+			description:
+				"Taste local flavors: fish tacos, seafood, and more, while biking through the city.",
+			icon: "bike-food",
+			image:
+				"https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=2581&auto=format&fit=crop",
+		},
 	],
 };
 
@@ -201,7 +312,7 @@ export const SERVICES_DATA = {
 		{
 			title: "RV Park Completo",
 			description:
-				"Espacios amplios con conexiones completas (agua, luz, drenaje). Área segura y tranquila rodeada de naturaleza.",
+				"Espacios amplios con areas comunes. Área segura y tranquila con todo lo que necestias duchas, baños, cocina comunt etc.",
 			icon: "rv",
 			image: rvParkImg.src,
 		},
