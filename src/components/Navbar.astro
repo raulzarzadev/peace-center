@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import peaceLogo from "../assets/peace-center-logo.jpeg";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import WifiConnect from "./WifiConnect";
 
@@ -31,43 +33,49 @@ const nextLangHref = lang === "es" ? "/en" : "/";
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16 items-center">
       <div class="flex-shrink-0 flex items-center">
-        <span class="text-2xl font-bold text-teal-700">Peace Center</span>
+        <a href="#home" aria-label={t("nav.home")}>
+          <Image src={peaceLogo} alt="Peace Center" class="h-10 w-auto" />
+        </a>
       </div>
-      <div class="hidden md:ml-6 md:flex md:space-x-8 items-center">
+      <div class="hidden lg:ml-6 lg:flex lg:space-x-6 items-center">
         {links.map((link) => (
           <a
             href={link.href}
-            class="text-stone-600 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            class="text-stone-600 hover:text-teal-600 px-2 py-2 rounded-md text-sm font-medium transition-colors"
           >
             {link.name}
           </a>
         ))}
         
-        <div class="flex items-center gap-2">
-            <a href={nextLangHref} class="text-stone-500 font-bold hover:text-teal-600 transition-colors text-sm border border-stone-300 rounded px-2 py-1">
-                {nextLangLabel}
-            </a>
+        <div class="flex items-center gap-3 border-l border-stone-200 pl-4 ml-2">
+            <div class="flex items-center gap-2 mr-2">
+              <a href={nextLangHref} class="text-stone-500 font-bold hover:text-teal-600 transition-colors text-xs uppercase tracking-wide">
+                  {nextLangLabel}
+              </a>
 
-            <a href="https://www.instagram.com/peacecenterlpz" target="_blank" class="text-stone-600 hover:text-pink-600 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
+              <a href="https://www.instagram.com/peacecenterlpz" target="_blank" class="text-stone-400 hover:text-pink-600 transition-colors" aria-label="Instagram">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+            </div>
             
             <WifiConnect client:load translations={wifiTranslations} />
 
-            <a 
-              href="https://bajarent.app/peace-center/RV's-Park" 
-              target="_blank"
-              class="text-teal-600 border border-teal-600 px-4 py-2 rounded-full text-sm font-bold hover:bg-teal-50 transition"
-            >
-              {t('nav.checkin')}
-            </a>
-            <a 
-              href="https://wa.me/526121539390" 
-              target="_blank"
-              class="bg-teal-600 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-teal-700 transition"
-            >
-              {t('nav.book')}
-            </a>
+            <div class="flex items-center gap-2">
+              <a 
+                href="https://bajarent.app/peace-center/RV's-Park" 
+                target="_blank"
+                class="text-teal-600 hover:bg-teal-50 px-3 py-1.5 rounded-full text-xs font-bold border border-teal-200 transition-colors"
+              >
+                {t('nav.checkin')}
+              </a>
+              <a 
+                href="https://wa.me/526121539390" 
+                target="_blank"
+                class="bg-teal-600 text-white px-4 py-1.5 rounded-full text-xs font-bold hover:bg-teal-700 transition shadow-sm hover:shadow"
+              >
+                {t('nav.book')}
+              </a>
+            </div>
         </div>
       </div>
       
