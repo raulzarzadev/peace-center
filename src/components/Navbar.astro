@@ -1,19 +1,19 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const links = [
-  { name: t('nav.home'), href: "#home" },
-  { name: t('nav.services'), href: "#servicios" },
-  { name: t('nav.recommendations'), href: "#recomendaciones" },
-  { name: t('nav.contact'), href: "#contacto" },
+	{ name: t("nav.home"), href: "#home" },
+	{ name: t("nav.services"), href: "#servicios" },
+	{ name: t("nav.recommendations"), href: "#recomendaciones" },
+	{ name: t("nav.contact"), href: "#contacto" },
 ];
 
-const nextLang = lang === 'es' ? 'en' : 'es';
-const nextLangLabel = lang === 'es' ? 'EN' : 'ES';
-const nextLangHref = lang === 'es' ? '/en' : '/';
+const nextLang = lang === "es" ? "en" : "es";
+const nextLangLabel = lang === "es" ? "EN" : "ES";
+const nextLangHref = lang === "es" ? "/en" : "/";
 ---
 
 <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
