@@ -3,16 +3,22 @@ import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import Hero from "../../components/Hero.astro";
 import Services from "../../components/Services.astro";
+import ToursRentals from "../../components/ToursRentals.astro";
 import Gallery from "../../components/Gallery.astro";
 import Recommendations from "../../components/Recommendations.astro";
 import Footer from "../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout>
+<Layout title={t('seo.title')} description={t('seo.description')}>
 	<Navbar />
 	<main>
 		<Hero />
 		<Services />
+		<ToursRentals />
 		<Gallery />
 		<Recommendations />
 	</main>
