@@ -41,6 +41,13 @@ const nextLangHref = lang === "es" ? "/en" : "/";
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             </a>
             <a 
+              href="https://bajarent.app/peace-center/RV's-Park" 
+              target="_blank"
+              class="text-teal-600 border border-teal-600 px-4 py-2 rounded-full text-sm font-bold hover:bg-teal-50 transition"
+            >
+              {t('nav.checkin')}
+            </a>
+            <a 
               href="https://wa.me/526121539390" 
               target="_blank"
               class="bg-teal-600 text-white px-4 py-2 rounded-full text-sm font-bold hover:bg-teal-700 transition"
@@ -54,6 +61,16 @@ const nextLangHref = lang === "es" ? "/en" : "/";
       <div class="flex items-center md:hidden gap-4">
         <a href={nextLangHref} class="text-stone-500 font-bold hover:text-teal-600 transition-colors text-sm border border-stone-300 rounded px-2 py-1">
             {nextLangLabel}
+        </a>
+        <a 
+          href="https://bajarent.app/peace-center/RV's-Park" 
+          target="_blank"
+          class="text-teal-600 border border-teal-600 p-2 rounded-full"
+          aria-label={t('nav.checkin')}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
+          </svg>
         </a>
         <a 
           href="https://wa.me/526121539390" 

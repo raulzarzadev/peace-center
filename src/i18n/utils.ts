@@ -17,6 +17,7 @@ export const UI = {
 		"nav.recommendations": "Recomendaciones",
 		"nav.contact": "Contacto",
 		"nav.book": "Reservar",
+		"nav.checkin": "Registrar Entrada",
 		"hero.title": "Tu Oasis en",
 		"hero.subtitle":
 			"Disfruta de la tranquilidad del desierto junto al mar. RV Park con servicios completos y cómodas habitaciones para tu estancia.",
@@ -30,6 +31,8 @@ export const UI = {
 		"tours.title": "Rentas y Tours",
 		"tours.subtitle":
 			"Complementa tu viaje con nuestras experiencias exclusivas.",
+		"tours.view_more": "Ver más",
+		"tours.view_less": "Ver menos",
 		"recommendations.title": "Descubre La Paz",
 		"recommendations.subtitle":
 			"Nuestras recomendaciones favoritas para tu visita.",
@@ -50,6 +53,7 @@ export const UI = {
 		"nav.recommendations": "Recommendations",
 		"nav.contact": "Contact",
 		"nav.book": "Book Now",
+		"nav.checkin": "Check In",
 		"hero.title": "Your Oasis in",
 		"hero.subtitle":
 			"Enjoy the tranquility of the desert by the sea. RV Park with full hookups and comfortable suites for your stay.",
@@ -62,6 +66,8 @@ export const UI = {
 		"services.airbnb_intro": "Looking to book via Airbnb?",
 		"tours.title": "Rentals & Tours",
 		"tours.subtitle": "Enhance your trip with our exclusive experiences.",
+		"tours.view_more": "View More",
+		"tours.view_less": "View Less",
 		"recommendations.title": "Discover La Paz",
 		"recommendations.subtitle": "Our favorite recommendations for your visit.",
 		"gallery.title": "Gallery",

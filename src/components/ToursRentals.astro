@@ -4,6 +4,7 @@ import { getLangFromUrl, useTranslations, TOURS_DATA } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const tours = TOURS_DATA[lang];
+const initialDisplayCount = 4;
 ---
 
 <section id="tours" class="py-20 bg-stone-100">
@@ -13,9 +14,9 @@ const tours = TOURS_DATA[lang];
       <p class="mt-4 text-xl text-stone-600">{t('tours.subtitle')}</p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {tours.map((tour) => (
-        <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col group h-full">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="tours-grid">
+      {tours.map((tour, index) => (
+        <div class={`bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col group h-full ${index >= initialDisplayCount ? 'hidden tour-item-hidden' : ''}`}>
           <div class="h-48 overflow-hidden relative">
             <img 
               src={tour.image} 
@@ -47,5 +48,42 @@ const tours = TOURS_DATA[lang];
       ))}
     </div>
     
+    {tours.length > initialDisplayCount && (
+      <div class="text-center mt-12">
+        <button 
+          id="toggle-tours-btn" 
+          class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-teal-600 hover:bg-teal-700 transition-colors duration-300"
+          data-text-more={t('tours.view_more')}
+          data-text-less={t('tours.view_less')}
+        >
+          {t('tours.view_more')}
+        </button>
+      </div>
+    )}
   </div>
 </section>
+
+<script>
+  const btn = document.getElementById('toggle-tours-btn');
+  const hiddenItems = document.querySelectorAll('.tour-item-hidden');
+  let isExpanded = false;
+
+  if(btn) {
+    btn.addEventListener('click', () => {
+      hiddenItems.forEach(item => {
+        item.classList.toggle('hidden');
+      });
+
+      isExpanded = !isExpanded;
+      if (isExpanded) {
+        btn.textContent = btn.dataset.textLess;
+      } else {
+        btn.textContent = btn.dataset.textMore;
+        const toursGrid = document.getElementById('tours-grid');
+        if(toursGrid) {
+            toursGrid.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  }
+</script>
