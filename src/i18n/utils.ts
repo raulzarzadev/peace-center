@@ -2,7 +2,11 @@ import rvParkImg from "../assets/IMG_4450.webp";
 import suitesImg from "../assets/IMG_4463+copy.webp";
 import areasImg from "../assets/IMG_4469.webp";
 
-import balandraImg from "../assets/IMG_4499.webp"; // Using existing images as placeholders if real ones aren't available, or unspash links
+import vanImg from "../assets/van.jpeg";
+import jeepRental from "../assets/jeep-cherokee.jpeg";
+import sandBoard from "../assets/sandboard-jeep-dunas.png";
+import beachStuffs from "../assets/beach-stuffs.jpeg";
+
 // For recommendations, we were using unsplash links. Let's keep using them or defined objects. Here I will use the data structure.
 
 export const LANGUAGES = {
@@ -122,40 +126,35 @@ export const TOURS_DATA = {
 			description:
 				"Todo lo necesario para un día perfecto: sombrillas, sillas, hieleras y más.",
 			icon: "sun",
-			image:
-				"https://images.unsplash.com/photo-1590059599527-37a5051908d1?q=80&w=2670&auto=format&fit=crop",
+			image: beachStuffs.src,
 		},
 		{
 			title: "Renta de Auto",
 			description:
 				"Muévete con libertad por La Paz y sus alrededores en nuestros vehículos confiables.",
 			icon: "car",
-			image:
-				"https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2670&auto=format&fit=crop",
+			image: jeepRental.src,
 		},
 		{
 			title: "Renta de Van",
 			description:
 				"Ideal para acampar sin preocupaciones. Comodidad y espacio para 2-3 personas. Cocina equipada.y muchas comididades.",
 			icon: "van",
-			image:
-				"https://images.unsplash.com/photo-1558284564-967d71b3e80e?q=80&w=2670&auto=format&fit=crop",
+			image: vanImg.src,
 		},
 		{
 			title: "Tour Dunas del Mogote 4x4",
 			description:
 				"Aventura todo terreno explorando las impresionantes dunas del Mogote y disfrutando de vistas espectaculares.",
 			icon: "jeep",
-			image:
-				"https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2670&auto=format&fit=crop",
+			image: sandBoard.src,
 		},
 		{
 			title: "Renta de Sandboard",
 			description:
 				"Deslízate por las dunas a tu propio ritmo. Diversión garantizada para todas las edades.",
 			icon: "board",
-			image:
-				"https://images.unsplash.com/photo-1543867629-23f269a21287?q=80&w=2670&auto=format&fit=crop",
+			image: sandBoard.src,
 		},
 		{
 			title: "Tour Bahía Magdalena",
@@ -236,32 +235,28 @@ export const TOURS_DATA = {
 			description:
 				"Everything you need for a perfect day: umbrellas, chairs, coolers, and more.",
 			icon: "sun",
-			image:
-				"https://images.unsplash.com/photo-1590059599527-37a5051908d1?q=80&w=2670&auto=format&fit=crop",
+			image: beachStuffs.src,
 		},
 		{
 			title: "Car Rental",
 			description:
 				"Move freely around La Paz and its surroundings in our reliable vehicles.",
 			icon: "car",
-			image:
-				"https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2670&auto=format&fit=crop",
+			image: jeepRental.src,
 		},
 		{
 			title: "Van Rental",
 			description:
 				"Ideal for camping without worries. Comfort and space for 2-3 people. Equipped kitchen and many amenities.",
 			icon: "van",
-			image:
-				"https://images.unsplash.com/photo-1558284564-967d71b3e80e?q=80&w=2670&auto=format&fit=crop",
+			image: vanImg.src,
 		},
 		{
 			title: "Mogote Dunes 4x4 Tour",
 			description:
 				"Off-road adventure exploring the impressive Mogote dunes with spectacular views.",
 			icon: "jeep",
-			image:
-				"https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2670&auto=format&fit=crop",
+			image: sandBoard.src,
 		},
 		{
 			title: "Sandboard Rental",
@@ -405,14 +400,14 @@ export const RECOMMENDATIONS_DATA = {
 		},
 		{
 			title: "Isla Espíritu Santo",
-			link: "https://www.google.com/maps/search/?api=1&query=Isla+Espíritu+Santo",
+			link: "hhttps://maps.app.goo.gl/DEXJtY5jwyDXHyBS7",
 			category: "to_do",
 			lat: 24.45,
 			lng: -110.34,
 		},
 		{
 			title: "Balandra via hiking",
-			link: "https://www.google.com/maps/search/?api=1&query=Playa+Balandra+La+Paz",
+			link: "https://maps.app.goo.gl/WsqyFKfFD3M5bxTN6",
 			category: "to_do",
 			lat: 24.321,
 			lng: -110.325,
@@ -482,7 +477,7 @@ export const RECOMMENDATIONS_DATA = {
 		},
 		{
 			title: "Tacos del Estadio",
-			link: "https://www.google.com/maps/search/?api=1&query=Tacos+del+Estadio+La+Paz",
+			link: "https://maps.app.goo.gl/9LYvRhGZy8ZkEXC88",
 			category: "drink_or_food",
 			lat: 24.145,
 			lng: -110.315,
@@ -509,29 +504,29 @@ export const RECOMMENDATIONS_DATA = {
 			lng: -110.32,
 		},
 		{
-			title: "Atelier 21",
-			link: "https://www.google.com/maps/search/?api=1&query=Atelier+21+La+Paz",
+			title: "Amelier 21",
+			link: "https://maps.app.goo.gl/TzHqJ5iAkaw6srVw5",
 			category: "neighborhood",
 			lat: 24.1605,
 			lng: -110.3105,
 		},
 		{
 			title: "Changarro de Doña Licha",
-			link: "https://www.google.com/maps/search/?api=1&query=Changarro+de+Doña+Licha+La+Paz",
+			link: "https://maps.app.goo.gl/aymdP8boEZFYy9b6A",
 			category: "neighborhood",
 			lat: 24.1585,
 			lng: -110.3125,
 		},
 		{
 			title: "Aqua fitness purificadora",
-			link: "https://www.google.com/maps/search/?api=1&query=Aqua+fitness+purificadora+La+Paz",
+			link: "https://maps.app.goo.gl/zXK7GTEHJijEGjDV6",
 			category: "neighborhood",
 			lat: 24.1555,
 			lng: -110.3155,
 		},
 		{
 			title: "Pescaderia La Gaviota",
-			link: "https://www.google.com/maps/search/?api=1&query=Pescaderia+La+Gaviota+La+Paz",
+			link: "https://maps.app.goo.gl/qNVYxYKX1GpGSTCR7",
 			category: "neighborhood",
 			lat: 24.1505,
 			lng: -110.3185,
@@ -544,8 +539,8 @@ export const RECOMMENDATIONS_DATA = {
 			lng: -110.3165,
 		},
 		{
-			title: "Tortillería La Paz",
-			link: "https://www.google.com/maps/search/?api=1&query=Tortillería+La+Paz",
+			title: "Tortillería La Espiga II ",
+			link: "https://maps.app.goo.gl/kVnivAhfqLS5yqnJ9",
 			category: "neighborhood",
 			lat: 24.1535,
 			lng: -110.3145,
@@ -561,14 +556,14 @@ export const RECOMMENDATIONS_DATA = {
 		},
 		{
 			title: "Espiritu Santo Island",
-			link: "https://www.google.com/maps/search/?api=1&query=Espiritu+Santo+Island",
+			link: "hhttps://maps.app.goo.gl/DEXJtY5jwyDXHyBS7",
 			category: "to_do",
 			lat: 24.45,
 			lng: -110.34,
 		},
 		{
 			title: "Balandra via hiking",
-			link: "https://www.google.com/maps/search/?api=1&query=Balandra+Beach+La+Paz",
+			link: "https://maps.app.goo.gl/WsqyFKfFD3M5bxTN6",
 			category: "to_do",
 			lat: 24.321,
 			lng: -110.325,
@@ -638,7 +633,7 @@ export const RECOMMENDATIONS_DATA = {
 		},
 		{
 			title: "Tacos del Estadio",
-			link: "https://www.google.com/maps/search/?api=1&query=Tacos+del+Estadio+La+Paz",
+			link: "https://maps.app.goo.gl/9LYvRhGZy8ZkEXC88",
 			category: "drink_or_food",
 			lat: 24.145,
 			lng: -110.315,
@@ -665,29 +660,29 @@ export const RECOMMENDATIONS_DATA = {
 			lng: -110.32,
 		},
 		{
-			title: "Atelier 21",
-			link: "https://www.google.com/maps/search/?api=1&query=Atelier+21+La+Paz",
+			title: "Amelier 21",
+			link: "https://maps.app.goo.gl/TzHqJ5iAkaw6srVw5",
 			category: "neighborhood",
 			lat: 24.1605,
 			lng: -110.3105,
 		},
 		{
 			title: "Changarro de Doña Licha (Local Store)",
-			link: "https://www.google.com/maps/search/?api=1&query=Changarro+de+Doña+Licha+La+Paz",
+			link: "https://maps.app.goo.gl/aymdP8boEZFYy9b6A",
 			category: "neighborhood",
 			lat: 24.1585,
 			lng: -110.3125,
 		},
 		{
 			title: "Aqua fitness purificadora (Water)",
-			link: "https://www.google.com/maps/search/?api=1&query=Aqua+fitness+purificadora+La+Paz",
+			link: "https://maps.app.goo.gl/zXK7GTEHJijEGjDV6",
 			category: "neighborhood",
 			lat: 24.1555,
 			lng: -110.3155,
 		},
 		{
 			title: "Pescaderia La Gaviota (Fish Market)",
-			link: "https://www.google.com/maps/search/?api=1&query=Pescaderia+La+Gaviota+La+Paz",
+			link: "https://maps.app.goo.gl/qNVYxYKX1GpGSTCR7",
 			category: "neighborhood",
 			lat: 24.1505,
 			lng: -110.3185,
@@ -700,8 +695,8 @@ export const RECOMMENDATIONS_DATA = {
 			lng: -110.3165,
 		},
 		{
-			title: "Tortillería La Paz",
-			link: "https://www.google.com/maps/search/?api=1&query=Tortillería+La+Paz",
+			title: "Tortillería La Espiga II ",
+			link: "https://maps.app.goo.gl/kVnivAhfqLS5yqnJ9",
 			category: "neighborhood",
 			lat: 24.1535,
 			lng: -110.3145,
