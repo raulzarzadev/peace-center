@@ -36,8 +36,6 @@ export const UI = {
 		"hero.cta_services": "Ver Servicios",
 		"services.title": "Nuestros Servicios",
 		"services.subtitle": "Todo lo que necesitas para una estancia placentera.",
-		"services.airbnb_1": "Airbnb Habitación 1",
-		"services.airbnb_2": "Airbnb Habitación 2",
 		"services.airbnb_intro": "¿Buscas reservar vía Airbnb?",
 		"tours.title": "Rentas y Tours",
 		"tours.subtitle":
@@ -88,8 +86,6 @@ export const UI = {
 		"hero.cta_services": "View Services",
 		"services.title": "Our Services",
 		"services.subtitle": "Everything you need for a pleasant stay.",
-		"services.airbnb_1": "Airbnb Room 1",
-		"services.airbnb_2": "Airbnb Room 2",
 		"services.airbnb_intro": "Looking to book via Airbnb?",
 		"tours.title": "Rentals & Tours",
 		"tours.subtitle": "Enhance your trip with our exclusive experiences.",
@@ -118,6 +114,14 @@ export const UI = {
 			"Your home in La Paz, BCS. RV Park with full hookups and short-stay suites. Close to nature and with the tranquility you seek.",
 	},
 };
+
+export const AIRBNB_ROOM_IDS = [
+	"49349930",
+	"49176878",
+	"49838388",
+	"51727855",
+	"803647622841024544",
+];
 
 export const TOURS_DATA = {
 	es: [
