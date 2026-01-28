@@ -1,5 +1,10 @@
 ---
-import { getLangFromUrl, useTranslations, TOURS_DATA } from "../i18n/utils";
+import {
+	getLangFromUrl,
+	useTranslations,
+	TOURS_DATA,
+	CONTACT_DATA,
+} from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -34,7 +39,7 @@ const initialDisplayCount = 4;
             <h3 class="text-lg font-bold text-stone-900 mb-2">{tour.title}</h3>
             <p class="text-stone-600 text-sm leading-relaxed mb-4 flex-1">{tour.description}</p>
             <a 
-                href={`https://wa.me/526121539390?text=${encodeURIComponent(lang === 'es' ? `Hola, me interesa información sobre: ${tour.title}` : `Hello, I'm interested in information about: ${tour.title}`)}`}
+                href={`https://wa.me/${CONTACT_DATA.whatsappNumber}?text=${encodeURIComponent(lang === 'es' ? `Hola, me interesa información sobre: ${tour.title}` : `Hello, I'm interested in information about: ${tour.title}`)}`}
                 target="_blank"
                 class="mt-auto text-teal-600 font-semibold text-sm hover:text-teal-800 flex items-center gap-1 group-hover:gap-2 transition-all"
             >

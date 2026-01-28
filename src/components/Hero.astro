@@ -1,6 +1,6 @@
 ---
 import heroImage from "../assets/peace-center.webp";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl, useTranslations, CONTACT_DATA } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -25,7 +25,7 @@ const t = useTranslations(lang);
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a 
-        href="https://wa.me/526121539390" 
+        href={CONTACT_DATA.whatsapp} 
         target="_blank"
         class="bg-[#25D366] hover:bg-[#128C7E] text-white text-xl font-bold py-5 px-10 rounded-full transition-all transform hover:scale-110 shadow-xl flex items-center justify-center gap-3"
       >
@@ -37,7 +37,7 @@ const t = useTranslations(lang);
       </a>
       
       <a 
-        href="https://www.instagram.com/peacecenterlpz" 
+        href={CONTACT_DATA.instagram} 
         target="_blank"
         class="bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] hover:opacity-90 text-white text-lg font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
       >

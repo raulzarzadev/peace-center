@@ -13,6 +13,20 @@ export const LANGUAGES = {
 	es: "Español",
 	en: "English",
 };
+const MINE = "5543374016";
+//const PEACE = "6121539390";
+const currentPhone = MINE;
+
+export const CONTACT_DATA = {
+	phone: `+52 ${currentPhone}`,
+	whatsappNumber: `52${currentPhone}`,
+	whatsapp: `https://wa.me/52${currentPhone}`,
+	instagram: "https://www.instagram.com/peacecenterlpz",
+	instagramHandle: "@peacecenterlpz",
+	email: "info@peacecenter.mx",
+	address: "La Paz, Baja California Sur, México",
+	checkin: "https://bajarent.app/peace-center/RV's-Park",
+};
 
 export const UI = {
 	es: {

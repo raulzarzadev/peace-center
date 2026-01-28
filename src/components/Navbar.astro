@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import peaceLogo from "../assets/peace-center-logo.jpeg";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl, useTranslations, CONTACT_DATA } from "../i18n/utils";
 import WifiConnect from "./WifiConnect";
 
 const lang = getLangFromUrl(Astro.url);
@@ -53,7 +53,7 @@ const nextLangHref = lang === "es" ? "/en" : "/";
                   {nextLangLabel}
               </a>
 
-              <a href="https://www.instagram.com/peacecenterlpz" target="_blank" class="text-stone-400 hover:text-pink-600 transition-colors" aria-label="Instagram">
+              <a href={CONTACT_DATA.instagram} target="_blank" class="text-stone-400 hover:text-pink-600 transition-colors" aria-label="Instagram">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
               </a>
             </div>
@@ -62,14 +62,14 @@ const nextLangHref = lang === "es" ? "/en" : "/";
 
             <div class="flex items-center gap-2">
               <a 
-                href="https://bajarent.app/peace-center/RV's-Park" 
+                href={CONTACT_DATA.checkin} 
                 target="_blank"
                 class="text-teal-600 hover:bg-teal-50 px-3 py-1.5 rounded-full text-xs font-bold border border-teal-200 transition-colors"
               >
                 {t('nav.checkin')}
               </a>
               <a 
-                href="https://wa.me/526121539390" 
+                href={CONTACT_DATA.whatsapp} 
                 target="_blank"
                 class="bg-[#25D366] text-white px-4 py-1.5 rounded-full text-xs font-bold hover:bg-[#128C7E] transition shadow-sm hover:shadow"
               >
@@ -88,7 +88,7 @@ const nextLangHref = lang === "es" ? "/en" : "/";
         <WifiConnect client:load translations={wifiTranslations} />
 
         <a 
-          href="https://bajarent.app/peace-center/RV's-Park" 
+          href={CONTACT_DATA.checkin} 
           target="_blank"
           class="text-teal-600 border border-teal-600 p-2 rounded-full"
           aria-label={t('nav.checkin')}
@@ -98,7 +98,7 @@ const nextLangHref = lang === "es" ? "/en" : "/";
           </svg>
         </a>
         <a 
-          href="https://wa.me/526121539390" 
+          href={CONTACT_DATA.whatsapp} 
           class="bg-[#25D366] text-white p-2 rounded-full"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
