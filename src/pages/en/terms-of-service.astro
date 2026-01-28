@@ -1,0 +1,31 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={`${t('footer.terms')} | Peace Center`} description={t('seo.description')}>
+	<Navbar />
+	<main class="pt-24 pb-16 px-4">
+		<div class="max-w-4xl mx-auto prose prose-stone">
+			<h1 class="text-3xl font-bold mb-8">{t('footer.terms')}</h1>
+			
+			<h2 class="text-xl font-semibold mt-6 mb-4">1. Use of the Site</h2>
+			<p>By using this website, you agree to comply with these terms. The content on this site is for general information and service booking purposes.</p>
+			
+			<h2 class="text-xl font-semibold mt-6 mb-4">2. Reservations</h2>
+			<p>Reservations are subject to availability and confirmation. We reserve the right to cancel or modify reservations in exceptional circumstances.</p>
+			
+			<h2 class="text-xl font-semibold mt-6 mb-4">3. Liability</h2>
+			<p>Peace Center is not liable for indirect losses or damages arising from the use of our services or facilities, within legal limits.</p>
+			
+			<h2 class="text-xl font-semibold mt-6 mb-4">4. Intellectual Property</h2>
+			<p>All content, logos, and images on this site are the property of Peace Center and may not be used without prior permission.</p>
+		</div>
+	</main>
+	<Footer />
+</Layout>

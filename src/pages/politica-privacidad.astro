@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={`${t('footer.privacy')} | Peace Center`} description={t('seo.description')}>
+	<Navbar />
+	<main class="pt-24 pb-16 px-4">
+		<div class="max-w-4xl mx-auto prose prose-stone">
+			<h1 class="text-3xl font-bold mb-8">{t('footer.privacy')}</h1>
+			
+			<p>En Peace Center, valoramos su privacidad. Esta política describe cómo manejamos su información personal.</p>
+			
+			<h2 class="text-xl font-semibold mt-6 mb-4">1. Información que recopilamos</h2>
+			<p>Recopilamos información que usted nos proporciona directamente al realizar una reserva o contactarnos, incluyendo su nombre, correo electrónico y número de teléfono.</p>
+			
+			<h2 class="text-xl font-semibold mt-6 mb-4">2. Uso de la información</h2>
+			<p>Utilizamos su información únicamente para gestionar sus reservas y comunicarnos con usted sobre su estancia o servicios solicitados.</p>
+			
+			<h2 class="text-xl font-semibold mt-6 mb-4">3. Protección de datos</h2>
+			<p>Implementamos medidas de seguridad para proteger sus datos personales contra el acceso no autorizado o la divulgación.</p>
+			
+			<h2 class="text-xl font-semibold mt-6 mb-4">4. Sus derechos</h2>
+			<p>Usted tiene derecho a acceder, rectificar o solicitar la eliminación de sus datos en cualquier momento contactándonos a info@peacecenter.mx.</p>
+		</div>
+	</main>
+	<Footer />
+</Layout>

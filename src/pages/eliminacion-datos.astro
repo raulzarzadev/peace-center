@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={`${t('footer.data_deletion')} | Peace Center`} description={t('seo.description')}>
+	<Navbar />
+	<main class="pt-24 pb-16 px-4">
+		<div class="max-w-4xl mx-auto prose prose-stone">
+			<h1 class="text-3xl font-bold mb-8">{t('footer.data_deletion')}</h1>
+			
+			<p>Usted tiene derecho a solicitar la eliminación de su información personal de nuestros registros.</p>
+			
+			<h2 class="text-xl font-semibold mt-6 mb-4">Cómo solicitar la eliminación</h2>
+			<p>Para solicitar la eliminación de sus datos, por favor envíe un correo electrónico a <strong>info@peacecenter.mx</strong> con el asunto "Solicitud de eliminación de datos".</p>
+			
+			<h2 class="text-xl font-semibold mt-6 mb-4">Información necesaria</h2>
+			<p>Por favor incluya en su mensaje:</p>
+			<ul class="list-disc pl-6 space-y-2">
+				<li>Su nombre completo.</li>
+				<li>El correo electrónico con el que realizó su reserva o contacto.</li>
+			</ul>
+			
+			<h2 class="text-xl font-semibold mt-6 mb-4">Plazo de respuesta</h2>
+			<p>Procesaremos su solicitud en un plazo máximo de 30 días hábiles y le confirmaremos la eliminación por correo electrónico.</p>
+		</div>
+	</main>
+	<Footer />
+</Layout>

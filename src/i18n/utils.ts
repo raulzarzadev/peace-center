@@ -69,6 +69,9 @@ export const UI = {
 		"footer.contact": "Contacto",
 		"footer.links": "Enlaces Rápidos",
 		"footer.rights": "Todos los derechos reservados.",
+		"footer.privacy": "Política de Privacidad",
+		"footer.terms": "Condiciones del Servicio",
+		"footer.data_deletion": "Eliminación de Datos",
 		"seo.title": "Peace Center | RV Park & Suites en La Paz",
 		"seo.description":
 			"Tu hogar en La Paz, BCS. RV Park con todos los servicios y habitaciones de corta estancia. Cerca de la naturaleza y con la tranquilidad que buscas.",
@@ -123,6 +126,9 @@ export const UI = {
 		"footer.contact": "Contact",
 		"footer.links": "Quick Links",
 		"footer.rights": "All rights reserved.",
+		"footer.privacy": "Privacy Policy",
+		"footer.terms": "Terms of Service",
+		"footer.data_deletion": "Data Deletion",
 		"seo.title": "Peace Center | RV Park & Suites in La Paz",
 		"seo.description":
 			"Your home in La Paz, BCS. RV Park with full hookups and short-stay suites. Close to nature and with the tranquility you seek.",
