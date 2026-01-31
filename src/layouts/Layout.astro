@@ -69,9 +69,10 @@ const { title, description } = Astro.props;
     s.parentNode.insertBefore(g,s);
     g.onload=function(){
       window.chatwootSDK.run({
-        websiteToken: 'HjwDbx7m4ab9hXC2bQWRGruq',
+        websiteToken: import.meta.env.PUBLIC_GOOGLE_CHATWOOT_TOKEN,
         baseUrl: BASE_URL
       })
     }
   })(document,"script");
 </script>
+
