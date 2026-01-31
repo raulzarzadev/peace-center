@@ -47,7 +47,7 @@ export const UI = {
 		"hero.subtitle":
 			"Disfruta de la tranquilidad del desierto junto al mar. RV Park con servicios completos y cómodas habitaciones para tu estancia.",
 		"hero.cta_whatsapp": "Reservar por WhatsApp",
-		"hero.cta_services": "Ver Servicios",
+		"hero.cta_services": "Otros Servicios",
 		"services.title": "Nuestros Servicios",
 		"services.subtitle": "Todo lo que necesitas para una estancia placentera.",
 		"services.airbnb_intro": "¿Buscas reservar vía Airbnb?",
@@ -100,7 +100,7 @@ export const UI = {
 		"hero.subtitle":
 			"Enjoy the tranquility of the desert by the sea. RV Park with full hookups and comfortable suites for your stay.",
 		"hero.cta_whatsapp": "Book via WhatsApp",
-		"hero.cta_services": "View Services",
+		"hero.cta_services": "More Services",
 		"services.title": "Our Services",
 		"services.subtitle": "Everything you need for a pleasant stay.",
 		"services.airbnb_intro": "Looking to book via Airbnb?",
