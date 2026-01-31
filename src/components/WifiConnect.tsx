@@ -37,7 +37,7 @@ export default function WifiConnect({
 	};
 
 	const buttonClassName = heroMode
-		? "flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 text-white rounded-full transition-all transform hover:scale-105 shadow-lg font-bold text-base sm:text-lg whitespace-nowrap"
+		? "flex items-center justify-center gap-2 w-full px-4 py-3 bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 text-white rounded-lg transition-all hover:scale-105 shadow-lg font-semibold text-sm md:text-base"
 		: "flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-sky-500 to-indigo-500 hover:from-sky-600 hover:to-indigo-600 text-white rounded-full transition-all shadow-md hover:shadow-lg font-bold text-xs md:text-sm whitespace-nowrap";
 	return (
 		<>
@@ -49,17 +49,15 @@ export default function WifiConnect({
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width={heroMode ? "24" : "18"}
-					height={heroMode ? "24" : "18"}
+					width={heroMode ? "20" : "18"}
+					height={heroMode ? "20" : "18"}
 					viewBox="0 0 24 24"
 					fill="none"
 					stroke="currentColor"
 					strokeWidth="2"
 					strokeLinecap="round"
 					strokeLinejoin="round"
-					className={
-						heroMode ? "w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" : "flex-shrink-0"
-					}
+					className="flex-shrink-0"
 				>
 					<title>Wi-Fi Icon</title>
 					<path d="M5 12.55a11 11 0 0 1 14.08 0"></path>

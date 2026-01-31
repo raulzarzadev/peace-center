@@ -72,19 +72,20 @@ const nextLangHref = lang === "es" ? "/en" : "/";
         </div>
       </div>
       
-      <!-- Mobile menu button placeholder -->
-      <div class="flex items-center md:hidden gap-4">
-        <a href={nextLangHref} class="text-stone-500 font-bold hover:text-teal-600 transition-colors text-sm border border-stone-300 rounded px-2 py-1">
-            {nextLangLabel}
-        </a>
-
-
+      <!-- Mobile menu -->
+      <div class="flex items-center gap-3 lg:hidden">
+        <!-- <WifiConnect client:load translations={wifiTranslations} /> -->
+        
         <a 
           href={CONTACT_DATA.checkin} 
           target="_blank"
-          class="text-teal-600 border-2 border-teal-600 px-3 py-1.5 rounded-full text-xs font-bold shadow-sm"
+          class="text-teal-600 border-2 border-teal-600 px-3 py-1.5 rounded-full text-xs font-bold shadow-sm hover:bg-teal-50 transition-colors"
         >
           Check In
+        </a>
+        
+        <a href={nextLangHref} class="text-stone-500 font-bold hover:text-teal-600 transition-colors text-xs border border-stone-300 rounded px-2 py-1">
+            {nextLangLabel}
         </a>
       </div>
     </div>
