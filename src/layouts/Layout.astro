@@ -59,3 +59,19 @@ const { title, description } = Astro.props;
 <script>
   import '../styles/global.css';
 </script>
+
+<script>
+  (function(d,t) {
+    var BASE_URL="https://peace-center-chat.up.railway.app";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";
+    g.async = true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){
+      window.chatwootSDK.run({
+        websiteToken: 'HjwDbx7m4ab9hXC2bQWRGruq',
+        baseUrl: BASE_URL
+      })
+    }
+  })(document,"script");
+</script>
