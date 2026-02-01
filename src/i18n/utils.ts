@@ -13,9 +13,9 @@ export const LANGUAGES = {
 	es: "Español",
 	en: "English",
 };
-//const MINE = "5543374016";
-const PEACE = "6121539390";
-const currentPhone = PEACE;
+const MINE = "5543374016";
+//const PEACE = "6121539390";
+const currentPhone = MINE;
 
 export const CONTACT_DATA = {
 	phone: `+52 ${currentPhone}`,
