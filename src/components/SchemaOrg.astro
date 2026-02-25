@@ -1,0 +1,98 @@
+---
+import { getLangFromUrl, useTranslations, CONTACT_DATA } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const siteUrl = Astro.site!.toString().replace(/\/$/, "");
+const currentPath = Astro.url.pathname;
+
+// LodgingBusiness + RVPark schema
+const businessSchema = {
+	"@context": "https://schema.org",
+	"@type": ["LodgingBusiness", "RVPark"],
+	"@id": `${siteUrl}/#business`,
+	name: "Peace Center",
+	description: t("seo.description"),
+	url: siteUrl,
+	telephone: CONTACT_DATA.phone,
+	email: CONTACT_DATA.email,
+	image: `${siteUrl}/peace-center.webp`,
+	logo: `${siteUrl}/peace-center-logo.jpeg`,
+	address: {
+		"@type": "PostalAddress",
+		addressLocality: "La Paz",
+		addressRegion: "Baja California Sur",
+		addressCountry: "MX",
+	},
+	geo: {
+		"@type": "GeoCoordinates",
+		latitude: 24.1426,
+		longitude: -110.3128,
+	},
+	amenityFeature: [
+		{ "@type": "LocationFeatureSpecification", name: "Full Hookups", value: true },
+		{ "@type": "LocationFeatureSpecification", name: "Wi-Fi", value: true },
+		{ "@type": "LocationFeatureSpecification", name: "BBQ Area", value: true },
+		{ "@type": "LocationFeatureSpecification", name: "Showers", value: true },
+		{ "@type": "LocationFeatureSpecification", name: "Air Conditioning", value: true },
+	],
+	sameAs: [CONTACT_DATA.instagram],
+	potentialAction: {
+		"@type": "ReserveAction",
+		target: {
+			"@type": "EntryPoint",
+			urlTemplate: CONTACT_DATA.whatsapp,
+		},
+		result: {
+			"@type": "LodgingReservation",
+			name: lang === "es" ? "Reservar por WhatsApp" : "Book via WhatsApp",
+		},
+	},
+};
+
+// WebSite schema
+const websiteSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	"@id": `${siteUrl}/#website`,
+	name: "Peace Center",
+	url: siteUrl,
+	publisher: { "@id": `${siteUrl}/#business` },
+	inLanguage: [
+		{ "@type": "Language", name: "Spanish", alternateName: "es" },
+		{ "@type": "Language", name: "English", alternateName: "en" },
+	],
+};
+
+// BreadcrumbList schema
+const pathSegments = currentPath.split("/").filter(Boolean);
+const breadcrumbItems = [
+	{
+		"@type": "ListItem",
+		position: 1,
+		name: lang === "es" ? "Inicio" : "Home",
+		item: lang === "es" ? siteUrl : `${siteUrl}/en/`,
+	},
+];
+
+if (pathSegments.length > 0 && !(pathSegments.length === 1 && pathSegments[0] === "en")) {
+	breadcrumbItems.push({
+		"@type": "ListItem",
+		position: 2,
+		name: pathSegments[pathSegments.length - 1]
+			.replace(/-/g, " ")
+			.replace(/\b\w/g, (c: string) => c.toUpperCase()),
+		item: `${siteUrl}${currentPath}`,
+	});
+}
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	itemListElement: breadcrumbItems,
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

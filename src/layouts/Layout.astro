@@ -1,5 +1,6 @@
 ---
-import { getLangFromUrl } from "../i18n/utils";
+import { getLangFromUrl, PATH_MAPPING } from "../i18n/utils";
+import SchemaOrg from "../components/SchemaOrg.astro";
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -9,6 +10,16 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
+const siteUrl = Astro.site!.toString().replace(/\/$/, "");
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("/peace-center.webp", Astro.site);
+
+// Compute hreflang alternate URL
+const currentPath = Astro.url.pathname.endsWith("/") ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const alternatePath = PATH_MAPPING[currentPath];
+const esUrl = lang === "es" ? canonicalUrl.href : alternatePath ? new URL(alternatePath, Astro.site).href : undefined;
+const enUrl = lang === "en" ? canonicalUrl.href : alternatePath ? new URL(alternatePath, Astro.site).href : undefined;
 ---
 
 <!doctype html>
@@ -16,6 +27,10 @@ const { title, description } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<link rel="canonical" href={canonicalUrl.href} />
+		{esUrl && <link rel="alternate" hreflang="es" href={esUrl} />}
+		{enUrl && <link rel="alternate" hreflang="en" href={enUrl} />}
+		{esUrl && <link rel="alternate" hreflang="x-default" href={esUrl} />}
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -36,20 +51,22 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		
+
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content={Astro.url} />
+		<meta property="og:url" content={canonicalUrl.href} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content="/peace-center.webp" />
+		<meta property="og:image" content={ogImage.href} />
 
 		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={Astro.url} />
-		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content="/peace-center.webp" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalUrl.href} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage.href} />
+
+		<SchemaOrg />
 	</head>
 	<body class="bg-stone-50 text-stone-800">
 		<slot />

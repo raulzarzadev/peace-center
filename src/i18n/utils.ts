@@ -168,7 +168,7 @@ export const TOURS_DATA = {
 		{
 			title: "Renta de Van",
 			description:
-				"Ideal para acampar sin preocupaciones. Comodidad y espacio para 2-3 personas. Cocina equipada.y muchas comididades.",
+				"Ideal para acampar sin preocupaciones. Comodidad y espacio para 2-3 personas. Cocina equipada y muchas comodidades.",
 			icon: "van",
 			image: vanImg.src,
 		},
@@ -375,7 +375,7 @@ export const SERVICES_DATA = {
 		{
 			title: "RV Park Completo",
 			description:
-				"Espacios amplios con areas comunes. Área segura y tranquila con todo lo que necestias duchas, baños, cocina comunt etc.",
+				"Espacios amplios con áreas comunes. Área segura y tranquila con todo lo que necesitas: duchas, baños, cocina comunitaria, etc.",
 			icon: "rv",
 			image: rvParkImg.src,
 		},
@@ -430,7 +430,7 @@ export const RECOMMENDATIONS_DATA = {
 		},
 		{
 			title: "Isla Espíritu Santo",
-			link: "hhttps://maps.app.goo.gl/DEXJtY5jwyDXHyBS7",
+			link: "https://maps.app.goo.gl/DEXJtY5jwyDXHyBS7",
 			category: "to_do",
 			lat: 24.45,
 			lng: -110.34,
@@ -586,7 +586,7 @@ export const RECOMMENDATIONS_DATA = {
 		},
 		{
 			title: "Espiritu Santo Island",
-			link: "hhttps://maps.app.goo.gl/DEXJtY5jwyDXHyBS7",
+			link: "https://maps.app.goo.gl/DEXJtY5jwyDXHyBS7",
 			category: "to_do",
 			lat: 24.45,
 			lng: -110.34,
@@ -732,6 +732,17 @@ export const RECOMMENDATIONS_DATA = {
 			lng: -110.3145,
 		},
 	],
+};
+
+export const PATH_MAPPING: Record<string, string> = {
+	"/": "/en/",
+	"/en/": "/",
+	"/politica-privacidad/": "/en/privacy-policy/",
+	"/en/privacy-policy/": "/politica-privacidad/",
+	"/terminos-servicio/": "/en/terms-of-service/",
+	"/en/terms-of-service/": "/terminos-servicio/",
+	"/eliminacion-datos/": "/en/data-deletion/",
+	"/en/data-deletion/": "/eliminacion-datos/",
 };
 
 export function getLangFromUrl(url: URL) {

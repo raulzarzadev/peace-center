@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.peacecenterlapaz.com/sitemap-index.xml
