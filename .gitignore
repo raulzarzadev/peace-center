@@ -22,3 +22,11 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# claude code
+.claude/
+
+# audit reports
+ACTION-PLAN.md
+FULL-AUDIT-REPORT.md
+audit-results/
