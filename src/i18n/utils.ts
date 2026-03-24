@@ -33,6 +33,7 @@ export const UI = {
 		"nav.home": "Inicio",
 		"nav.services": "Servicios",
 		"nav.recommendations": "Recomendaciones",
+		"nav.transport": "Transporte",
 		"nav.contact": "Contacto",
 		"nav.book": "Reservar",
 		"nav.checkin": "Registrar Entrada",
@@ -53,6 +54,7 @@ export const UI = {
 		"hero.nav_recommendations": "Recomendaciones",
 		"services.title": "Nuestros Servicios",
 		"services.subtitle": "Todo lo que necesitas para una estancia placentera.",
+		"services.airbnb_title": "Reserva en Airbnb",
 		"services.airbnb_intro": "¿Buscas reservar vía Airbnb?",
 		"tours.title": "Rentas y Tours",
 		"tours.subtitle":
@@ -65,6 +67,22 @@ export const UI = {
 		"recommendations.todo": "Hacer",
 		"recommendations.eatdrink": "Comer/Beber",
 		"recommendations.neighborhood": "Del Barrio",
+		"transport.title": "Transporte",
+		"transport.subtitle":
+			"Opciones de transporte público para moverte por La Paz y Baja California Sur.",
+		"transport.intercity": "Interurbano",
+		"transport.urban": "Urbano",
+		"transport.local": "Local",
+		"transport.schedule": "Horarios",
+		"transport.fare": "Tarifa",
+		"transport.phone": "Tel",
+		"transport.weekdays": "L-S",
+		"transport.sundays": "Dom",
+		"transport.from": "Desde",
+		"transport.frequency": "Frecuencia",
+		"transport.every_min": "cada 20 min",
+		"transport.payment": "Pago con tarjeta TU recargable",
+		"transport.app_tracking": "Rastreo en tiempo real con App La Paz",
 		"gallery.title": "Galería",
 		"gallery.subtitle": "Un vistazo a nuestro pequeño paraíso.",
 		"footer.about":
@@ -89,6 +107,7 @@ export const UI = {
 		"nav.home": "Home",
 		"nav.services": "Services",
 		"nav.recommendations": "Recommendations",
+		"nav.transport": "Transportation",
 		"nav.contact": "Contact",
 		"nav.book": "Book Now",
 		"nav.checkin": "Check In",
@@ -109,6 +128,7 @@ export const UI = {
 		"hero.nav_recommendations": "Recommendations",
 		"services.title": "Our Services",
 		"services.subtitle": "Everything you need for a pleasant stay.",
+		"services.airbnb_title": "Book on Airbnb",
 		"services.airbnb_intro": "Looking to book via Airbnb?",
 		"tours.title": "Rentals & Tours",
 		"tours.subtitle": "Enhance your trip with our exclusive experiences.",
@@ -119,6 +139,22 @@ export const UI = {
 		"recommendations.todo": "To Do",
 		"recommendations.eatdrink": "Eat/Drink",
 		"recommendations.neighborhood": "Neighborhood",
+		"transport.title": "Transportation",
+		"transport.subtitle":
+			"Public transport options to get around La Paz and Baja California Sur.",
+		"transport.intercity": "Intercity",
+		"transport.urban": "Urban",
+		"transport.local": "Local",
+		"transport.schedule": "Schedule",
+		"transport.fare": "Fare",
+		"transport.phone": "Phone",
+		"transport.weekdays": "Mon-Sat",
+		"transport.sundays": "Sun",
+		"transport.from": "From",
+		"transport.frequency": "Frequency",
+		"transport.every_min": "every 20 min",
+		"transport.payment": "Pay with rechargeable TU card",
+		"transport.app_tracking": "Real-time tracking via App La Paz",
 		"gallery.title": "Gallery",
 		"gallery.subtitle": "A glimpse of our little paradise.",
 		"wifi.title": "Connect to WiFi",
@@ -732,6 +768,114 @@ export const RECOMMENDATIONS_DATA = {
 			lng: -110.3145,
 		},
 	],
+};
+
+export const TRANSPORT_DATA = {
+	aguila: {
+		name: "Autobuses Águila",
+		phone: "(612) 165-5444",
+		phoneTollFree: "01 800 026 8931",
+		terminal: {
+			es: "Terminal Turística, Av. Álvaro Obregón (Malecón), entre 5 de Mayo e Independencia",
+			en: "Tourist Terminal, Av. Álvaro Obregón (Malecón), between 5 de Mayo & Independencia",
+		},
+		website: "https://autobusesaguila.com",
+		routes: [
+			{
+				destination: { es: "Cabo San Lucas / San José del Cabo", en: "Cabo San Lucas / San José del Cabo" },
+				schedules: "5:10, 5:45, 6:00, 7:00, 8:00, 8:30, 9:00, 10:00, 11:00, 11:30, 12:00, 13:00, 13:30, 14:00, 15:00, 15:30, 16:00, 16:30, 17:30, 18:15, 18:30, 19:30, 21:30",
+				fare: "~$335 MXN",
+				duration: { es: "~3 hrs", en: "~3 hrs" },
+			},
+			{
+				destination: { es: "Todos Santos", en: "Todos Santos" },
+				schedules: "6:00, 7:00, 8:00, 9:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:30, 18:30, 21:30",
+				fare: "~$200 MXN",
+				duration: { es: "~1.5 hrs", en: "~1.5 hrs" },
+			},
+			{
+				destination: { es: "Loreto", en: "Loreto" },
+				schedules: "7:00, 9:00, 12:00, 15:00, 18:00, 20:00, 21:00",
+				fare: "~$500 MXN",
+				duration: { es: "~5 hrs", en: "~5 hrs" },
+			},
+			{
+				destination: { es: "Santa Rosalía", en: "Santa Rosalía" },
+				schedules: "7:00, 9:00, 12:00, 20:00, 21:00",
+				fare: "~$700 MXN",
+				duration: { es: "~7 hrs", en: "~7 hrs" },
+			},
+			{
+				destination: { es: "Guerrero Negro", en: "Guerrero Negro" },
+				schedules: "7:00, 20:00, 21:00",
+				fare: "~$1,450 MXN",
+				duration: { es: "~13 hrs", en: "~13 hrs" },
+			},
+			{
+				destination: { es: "Cd. Constitución", en: "Cd. Constitución" },
+				schedules: "7:00, 8:00, 9:00, 11:00, 12:00, 14:00, 15:00, 18:00, 21:00",
+				fare: "~$300 MXN",
+				duration: { es: "~2.5 hrs", en: "~2.5 hrs" },
+			},
+			{
+				destination: { es: "Tijuana", en: "Tijuana" },
+				schedules: "7:00, 20:00",
+				fare: "~$2,500 MXN",
+				duration: { es: "~22 hrs", en: "~22 hrs" },
+			},
+			{
+				destination: { es: "Ensenada", en: "Ensenada" },
+				schedules: "7:00, 20:00",
+				fare: "~$2,200 MXN",
+				duration: { es: "~18 hrs", en: "~18 hrs" },
+			},
+		],
+	},
+	tiburonUrbano: {
+		name: "Tiburón Urbano",
+		hours: "5:30 – 22:30",
+		frequency: "20 min",
+		app: "App La Paz",
+		routes: [
+			{
+				name: "SMT-01",
+				description: {
+					es: "Camino Real ↔ Vinoramas, Emiliano Zapata, Indeco, Centro, Márquez de León",
+					en: "Camino Real ↔ Vinoramas, Emiliano Zapata, Indeco, Centro, Márquez de León",
+				},
+			},
+			{
+				name: "SMT-02",
+				description: {
+					es: "Panteón San Juanes ↔ Camino Real (Anáhuac, Catedral, Teatro de la Ciudad, UABCS, CEDEM)",
+					en: "San Juanes ↔ Camino Real (Anáhuac, Cathedral, Teatro de la Ciudad, UABCS, CEDEM)",
+				},
+			},
+		],
+		fares: {
+			general: { card: "$50 MXN", trip: "$12 MXN" },
+			student: { card: "$40 MXN", trip: "$6 MXN" },
+			preferential: { card: "$30 MXN", trip: "$6 MXN" },
+		},
+	},
+	ventanaBus: {
+		name: { es: "Bus La Ventana / El Sargento", en: "La Ventana / El Sargento Bus" },
+		phone: "612 114 0266",
+		fare: "$40 MXN",
+		pickup: {
+			es: "Frente al Mercado Bravo (Nicolás Bravo y Guillermo Prieto)",
+			en: "In front of Mercado Bravo (Nicolás Bravo & Guillermo Prieto)",
+		},
+		mapLink: "https://maps.app.goo.gl/qQ92mMjdzJieXbyG6",
+		weekday: {
+			fromSargento: ["6:45", "16:15"],
+			fromLaPaz: ["14:00", "19:00"],
+		},
+		sunday: {
+			fromSargento: ["13:00"],
+			fromLaPaz: ["19:00"],
+		},
+	},
 };
 
 export const PATH_MAPPING: Record<string, string> = {

@@ -32,14 +32,19 @@ const recommendations = RECOMMENDATIONS_DATA[lang];
             {recommendations.filter((item) => item.category === cat.key).map((item) => (
               <li class="flex items-start group">
                 <span class="text-teal-500 mr-2 transform group-hover:scale-125 transition-transform duration-300">•</span>
-                <a 
-                    href={item.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="text-lg text-stone-300 group-hover:text-white transition-colors duration-300 font-handwritten-body hover:underline decoration-teal-500/50 underline-offset-4"
-                >
-                    {item.title}
-                </a>
+                <div class="flex flex-col">
+                  <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-lg text-stone-300 group-hover:text-white transition-colors duration-300 font-handwritten-body hover:underline decoration-teal-500/50 underline-offset-4"
+                  >
+                      {item.title}
+                  </a>
+                  {item.description && (
+                    <span class="text-sm text-stone-500 mt-1 font-handwritten-body">{item.description}</span>
+                  )}
+                </div>
               </li>
             ))}
           </ul>

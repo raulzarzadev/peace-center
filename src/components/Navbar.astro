@@ -21,73 +21,178 @@ const links = [
 	{ name: t("nav.home"), href: "#home" },
 	{ name: t("nav.services"), href: "#servicios" },
 	{ name: t("nav.recommendations"), href: "#recomendaciones" },
+	{ name: t("nav.transport"), href: "#transporte" },
 	{ name: t("nav.contact"), href: "#contacto" },
 ];
 
-const nextLang = lang === "es" ? "en" : "es";
 const nextLangLabel = lang === "es" ? "EN" : "ES";
 const nextLangHref = lang === "es" ? "/en" : "/";
 ---
 
-<nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+<nav id="main-nav" class="fixed w-full z-50 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-16 items-center">
-      <div class="flex-shrink-0 flex items-center">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
         <a href="#home" aria-label={t("nav.home")}>
-          <Image src={peaceLogo} alt="Peace Center" class="h-10 w-auto" />
+          <Image src={peaceLogo} alt="Peace Center" class="h-10 w-auto rounded-full" />
         </a>
       </div>
-      <div class="hidden lg:ml-6 lg:flex lg:space-x-6 items-center">
+
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex lg:items-center lg:gap-1">
         {links.map((link) => (
           <a
             href={link.href}
-            class="text-stone-600 hover:text-teal-600 px-2 py-2 rounded-md text-sm font-medium transition-colors"
+            class="nav-link text-white/80 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
           >
             {link.name}
           </a>
         ))}
-        
-        <div class="flex items-center gap-3 border-l border-stone-200 pl-4 ml-2">
-            <div class="flex items-center gap-2 mr-2">
-              <a href={nextLangHref} class="text-stone-500 font-bold hover:text-teal-600 transition-colors text-xs uppercase tracking-wide">
-                  {nextLangLabel}
-              </a>
 
-              <a href={CONTACT_DATA.instagram} target="_blank" class="text-stone-400 hover:text-pink-600 transition-colors" aria-label="Instagram">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              </a>
-            </div>
-            
-            <WifiConnect client:load translations={wifiTranslations} />
+        <div class="flex items-center gap-2.5 border-l border-white/20 nav-divider pl-3 ml-2">
+          <!-- Airbnb -->
+          <a href="#airbnb" class="nav-icon text-white/60 hover:text-[#FF5A5F] transition-colors" aria-label="Airbnb">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 18.275c-.97-1.283-1.695-2.494-2.204-3.465a7.865 7.865 0 0 1-.344-.753c-.395-.99-.426-1.782-.093-2.367.333-.586.964-.907 1.753-.907h.015c.792.003 1.418.33 1.743.918.326.59.293 1.38-.098 2.362-.112.27-.224.523-.347.758-.509.97-1.234 2.18-2.204 3.454zm9.206 1.478c-.166.593-.503 1.107-.978 1.488a2.796 2.796 0 0 1-1.675.592c-.936.035-2.058-.35-3.373-1.163a17.162 17.162 0 0 1-1.376-.963 22.473 22.473 0 0 0 2.756-4.473c.695-1.527.938-2.891.725-4.057-.213-1.165-.89-2.085-1.952-2.661-1.073-.582-2.28-.584-3.346 0-1.065.582-1.738 1.504-1.948 2.665-.21 1.166.033 2.53.728 4.057a22.473 22.473 0 0 0 2.756 4.473c-.43.345-.896.668-1.376.963-1.315.813-2.437 1.198-3.373 1.163a2.796 2.796 0 0 1-1.675-.592 2.616 2.616 0 0 1-.978-1.488c-.226-.812-.1-1.79.366-2.908.33-.78.77-1.65 1.302-2.558a26.007 26.007 0 0 1 3.2-4.283l.44-.464s.167.174.437.464a26.148 26.148 0 0 1 3.2 4.283c.533.908.972 1.778 1.302 2.558.465 1.118.592 2.096.366 2.908z"/></svg>
+          </a>
 
-            <div class="flex items-center gap-2">
-              <a 
-                href={CONTACT_DATA.checkin} 
-                target="_blank"
-                class="text-teal-600 hover:bg-teal-50 px-4 py-2 rounded-full text-sm font-bold border-2 border-teal-600 transition-colors shadow-sm hover:shadow-md"
-              >
-                Check In
-              </a>
-            </div>
+          <!-- Instagram -->
+          <a href={CONTACT_DATA.instagram} target="_blank" class="nav-icon text-white/60 hover:text-pink-400 transition-colors" aria-label="Instagram">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+
+          <!-- WhatsApp -->
+          <a href={CONTACT_DATA.whatsapp} target="_blank" class="nav-icon text-white/60 hover:text-[#25D366] transition-colors" aria-label="WhatsApp">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          </a>
+
+          <!-- Language -->
+          <a href={nextLangHref} class="nav-lang text-white/70 font-bold hover:text-white transition-colors text-xs uppercase tracking-wide ml-1">
+            {nextLangLabel}
+          </a>
+
+          <WifiConnect client:load translations={wifiTranslations} />
         </div>
       </div>
-      
-      <!-- Mobile menu -->
-      <div class="flex items-center gap-3 lg:hidden">
-        <!-- <WifiConnect client:load translations={wifiTranslations} /> -->
-        
-        <a 
-          href={CONTACT_DATA.checkin} 
-          target="_blank"
-          class="text-teal-600 border-2 border-teal-600 px-3 py-1.5 rounded-full text-xs font-bold shadow-sm hover:bg-teal-50 transition-colors"
-        >
-          Check In
+
+      <!-- Mobile header right -->
+      <div class="flex items-center gap-2.5 lg:hidden">
+        <!-- WhatsApp -->
+        <a href={CONTACT_DATA.whatsapp} target="_blank" class="nav-icon text-white/70 hover:text-[#25D366] transition-colors" aria-label="WhatsApp">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
         </a>
-        
-        <a href={nextLangHref} class="text-stone-500 font-bold hover:text-teal-600 transition-colors text-xs border border-stone-300 rounded px-2 py-1">
-            {nextLangLabel}
+
+        <!-- Language -->
+        <a href={nextLangHref} class="nav-lang text-white/70 font-bold hover:text-white transition-colors text-xs uppercase tracking-wide border border-white/30 nav-lang-border rounded px-2 py-1">
+          {nextLangLabel}
         </a>
+
+        <!-- Hamburger -->
+        <button id="mobile-menu-btn" class="nav-icon text-white/80 hover:text-white transition-colors" aria-label="Menu">
+          <svg class="w-6 h-6 hamburger-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg class="w-6 h-6 close-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
       </div>
     </div>
   </div>
+
+  <!-- Mobile dropdown menu -->
+  <div id="mobile-menu" class="lg:hidden hidden">
+    <div class="px-4 py-3 space-y-1 bg-stone-900/90 backdrop-blur-md mobile-menu-bg">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class="mobile-nav-link block text-white/80 hover:text-white hover:bg-white/10 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
+        >
+          {link.name}
+        </a>
+      ))}
+    </div>
+  </div>
 </nav>
+
+<script>
+  // Hamburger toggle
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const hamburger = btn?.querySelector('.hamburger-icon');
+  const closeIcon = btn?.querySelector('.close-icon');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    hamburger?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
+
+  menu?.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      hamburger?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    });
+  });
+
+  // Scroll: transparent → solid
+  const nav = document.getElementById('main-nav');
+  const onScroll = () => {
+    if (!nav) return;
+    const scrolled = window.scrollY > 50;
+    nav.classList.toggle('nav-solid', scrolled);
+    nav.classList.toggle('nav-transparent', !scrolled);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>
+
+<style>
+  /* Transparent state (over hero) */
+  #main-nav.nav-transparent {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* Solid state (scrolled) */
+  #main-nav.nav-solid {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  #main-nav.nav-solid .nav-link {
+    color: rgb(87, 83, 78); /* stone-600 */
+  }
+  #main-nav.nav-solid .nav-link:hover {
+    color: rgb(13, 148, 136); /* teal-600 */
+  }
+
+  #main-nav.nav-solid .nav-icon {
+    color: rgb(168, 162, 158); /* stone-400 */
+  }
+
+  #main-nav.nav-solid .nav-lang {
+    color: rgb(120, 113, 108); /* stone-500 */
+  }
+  #main-nav.nav-solid .nav-lang:hover {
+    color: rgb(13, 148, 136);
+  }
+
+  #main-nav.nav-solid .nav-divider {
+    border-color: rgb(231, 229, 228); /* stone-200 */
+  }
+
+  #main-nav.nav-solid .nav-lang-border {
+    border-color: rgb(214, 211, 209); /* stone-300 */
+  }
+
+  #main-nav.nav-solid .mobile-menu-bg {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+  }
+  #main-nav.nav-solid .mobile-nav-link {
+    color: rgb(87, 83, 78);
+  }
+  #main-nav.nav-solid .mobile-nav-link:hover {
+    color: rgb(13, 148, 136);
+    background: rgb(245, 245, 244); /* stone-100 */
+  }
+</style>
