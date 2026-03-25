@@ -2,10 +2,10 @@ import rvParkImg from "../assets/IMG_4450.webp";
 import suitesImg from "../assets/IMG_4463+copy.webp";
 import areasImg from "../assets/IMG_4469.webp";
 
-import vanImg from "../assets/van.jpeg";
-import jeepRental from "../assets/jeep-cherokee.jpeg";
-import sandBoard from "../assets/sandboard-jeep-dunas.png";
-import beachStuffs from "../assets/beach-stuffs.jpeg";
+import vanImg from "../assets/van.webp";
+import jeepRental from "../assets/jeep-cherokee.webp";
+import sandBoard from "../assets/sandboard-jeep-dunas.webp";
+import beachStuffs from "../assets/beach-stuffs.webp";
 
 // For recommendations, we were using unsplash links. Let's keep using them or defined objects. Here I will use the data structure.
 
