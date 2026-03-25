@@ -564,7 +564,7 @@ export const RECOMMENDATIONS_DATA = {
 		},
 		{
 			title: "Tacos perrones",
-			link: "https://www.google.com/maps/search/?api=1&query=Tacos+Perrones+La+Paz",
+			link: "https://maps.app.goo.gl/yxLVGxFaZ54TVFQN7",
 			category: "drink_or_food",
 			lat: 24.14,
 			lng: -110.32,
@@ -720,7 +720,7 @@ export const RECOMMENDATIONS_DATA = {
 		},
 		{
 			title: "Tacos perrones",
-			link: "https://www.google.com/maps/search/?api=1&query=Tacos+Perrones+La+Paz",
+			link: "https://maps.app.goo.gl/yxLVGxFaZ54TVFQN7",
 			category: "drink_or_food",
 			lat: 24.14,
 			lng: -110.32,
@@ -780,6 +780,7 @@ export const TRANSPORT_DATA = {
 			en: "Tourist Terminal, Av. Álvaro Obregón (Malecón), between 5 de Mayo & Independencia",
 		},
 		website: "https://autobusesaguila.com",
+		mapLink: "https://maps.app.goo.gl/ZXTsVrLHvseS2Eu49",
 		routes: [
 			{
 				destination: { es: "Cabo San Lucas / San José del Cabo", en: "Cabo San Lucas / San José del Cabo" },

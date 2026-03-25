@@ -36,7 +36,10 @@ const { aguila, tiburonUrbano, ventanaBus } = TRANSPORT_DATA;
           </div>
         </summary>
         <div class="p-5">
-          <p class="text-xs text-stone-500 mb-4">{aguila.terminal[lang]}</p>
+          <a href={aguila.mapLink} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs text-stone-500 hover:text-teal-700 transition-colors mb-4">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            {aguila.terminal[lang]}
+          </a>
 
           <!-- Desktop table -->
           <div class="hidden md:block overflow-x-auto">
@@ -189,8 +192,6 @@ const { aguila, tiburonUrbano, ventanaBus } = TRANSPORT_DATA;
 </section>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
-
 .font-handwritten {
   font-family: 'Caveat', cursive;
 }

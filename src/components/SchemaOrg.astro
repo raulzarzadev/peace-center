@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, useTranslations, CONTACT_DATA } from "../i18n/utils";
+import { getLangFromUrl, useTranslations, CONTACT_DATA, TOURS_DATA } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -18,11 +18,31 @@ const businessSchema = {
 	email: CONTACT_DATA.email,
 	image: `${siteUrl}/peace-center.webp`,
 	logo: `${siteUrl}/peace-center-logo.jpeg`,
+	priceRange: "$$",
+	checkinTime: "14:00",
+	checkoutTime: "12:00",
+	numberOfRooms: 6,
 	address: {
 		"@type": "PostalAddress",
+		streetAddress: "Calle Jalisco",
 		addressLocality: "La Paz",
 		addressRegion: "Baja California Sur",
+		postalCode: "23060",
 		addressCountry: "MX",
+	},
+	openingHoursSpecification: {
+		"@type": "OpeningHoursSpecification",
+		dayOfWeek: [
+			"Monday",
+			"Tuesday",
+			"Wednesday",
+			"Thursday",
+			"Friday",
+			"Saturday",
+			"Sunday",
+		],
+		opens: "00:00",
+		closes: "23:59",
 	},
 	geo: {
 		"@type": "GeoCoordinates",
@@ -71,7 +91,7 @@ const breadcrumbItems = [
 		"@type": "ListItem",
 		position: 1,
 		name: lang === "es" ? "Inicio" : "Home",
-		item: lang === "es" ? siteUrl : `${siteUrl}/en/`,
+		item: lang === "es" ? `${siteUrl}/` : `${siteUrl}/en/`,
 	},
 ];
 
@@ -91,8 +111,28 @@ const breadcrumbSchema = {
 	"@type": "BreadcrumbList",
 	itemListElement: breadcrumbItems,
 };
+
+// TouristTrip ItemList schema
+const toursData = TOURS_DATA[lang];
+const toursListSchema = {
+	"@context": "https://schema.org",
+	"@type": "ItemList",
+	name: lang === "es" ? "Tours y Experiencias" : "Tours & Experiences",
+	itemListElement: toursData.map((tour: { title: string; description: string }, index: number) => ({
+		"@type": "ListItem",
+		position: index + 1,
+		item: {
+			"@type": "TouristTrip",
+			name: tour.title,
+			description: tour.description,
+			touristType: "Adventure",
+			provider: { "@id": `${siteUrl}/#business` },
+		},
+	})),
+};
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(toursListSchema)} />

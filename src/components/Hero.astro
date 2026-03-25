@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import heroImage from "../assets/peace-center.webp";
 import { getLangFromUrl, useTranslations, CONTACT_DATA } from "../i18n/utils";
 import WifiConnect from "./WifiConnect";
@@ -21,10 +22,12 @@ const glassBtn = "bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-w
 
 <section id="home" class="relative bg-stone-900 h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
   <div class="absolute inset-0 z-0">
-    <img
-      src={heroImage.src}
+    <Image
+      src={heroImage}
       alt="Peace Center RV Park"
       class="w-full h-full object-cover opacity-60"
+      fetchpriority="high"
+      loading="eager"
     />
     <div class="absolute inset-0 bg-gradient-to-b from-stone-900/10 to-stone-900/40"></div>
   </div>
