@@ -25,7 +25,12 @@ export default defineConfig({
 		locales: ["es", "en"],
 		routing: {
 			prefixDefaultLocale: false,
+			redirectToDefaultLocale: true,
 		},
+	},
+	redirects: {
+		"/es": "/",
+		"/es/": "/",
 	},
 	vite: {
 		plugins: [tailwindcss()],
