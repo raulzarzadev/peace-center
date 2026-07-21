@@ -6,6 +6,14 @@ const t = useTranslations(lang);
 const siteUrl = Astro.site!.toString().replace(/\/$/, "");
 const currentPath = Astro.url.pathname;
 
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+const currentUrl = new URL(currentPath, Astro.site).href;
+
 // LodgingBusiness + RVPark schema
 const businessSchema = {
 	"@context": "https://schema.org",
@@ -109,7 +117,21 @@ if (pathSegments.length > 0 && !(pathSegments.length === 1 && pathSegments[0] ==
 const breadcrumbSchema = {
 	"@context": "https://schema.org",
 	"@type": "BreadcrumbList",
+	"@id": `${currentUrl}#breadcrumb`,
 	itemListElement: breadcrumbItems,
+};
+
+const webPageSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebPage",
+	"@id": `${currentUrl}#webpage`,
+	url: currentUrl,
+	name: title ?? (lang === "es" ? "Peace Center" : "Peace Center"),
+	description: description ?? t("seo.description"),
+	inLanguage: lang,
+	isPartOf: { "@id": `${siteUrl}/#website` },
+	about: { "@id": `${siteUrl}/#business` },
+	breadcrumb: { "@id": `${currentUrl}#breadcrumb` },
 };
 
 // TouristTrip ItemList schema
@@ -135,4 +157,5 @@ const toursListSchema = {
 <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(toursListSchema)} />

@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import peaceLogo from "../assets/peace-center-logo.webp";
 import { getLangFromUrl, useTranslations, CONTACT_DATA } from "../i18n/utils";
 import WifiConnect from "./WifiConnect";
+import AirbnbIcon from "./AirbnbIcon.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -53,7 +54,7 @@ const nextLangHref = lang === "es" ? "/en" : "/";
         <div class="flex items-center gap-2.5 border-l border-white/20 nav-divider pl-3 ml-2">
           <!-- Airbnb -->
           <a href="#airbnb" class="nav-icon text-white/60 hover:text-[#FF5A5F] transition-colors" aria-label="Airbnb">
-            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 18.275c-.97-1.283-1.695-2.494-2.204-3.465a7.865 7.865 0 0 1-.344-.753c-.395-.99-.426-1.782-.093-2.367.333-.586.964-.907 1.753-.907h.015c.792.003 1.418.33 1.743.918.326.59.293 1.38-.098 2.362-.112.27-.224.523-.347.758-.509.97-1.234 2.18-2.204 3.454zm9.206 1.478c-.166.593-.503 1.107-.978 1.488a2.796 2.796 0 0 1-1.675.592c-.936.035-2.058-.35-3.373-1.163a17.162 17.162 0 0 1-1.376-.963 22.473 22.473 0 0 0 2.756-4.473c.695-1.527.938-2.891.725-4.057-.213-1.165-.89-2.085-1.952-2.661-1.073-.582-2.28-.584-3.346 0-1.065.582-1.738 1.504-1.948 2.665-.21 1.166.033 2.53.728 4.057a22.473 22.473 0 0 0 2.756 4.473c-.43.345-.896.668-1.376.963-1.315.813-2.437 1.198-3.373 1.163a2.796 2.796 0 0 1-1.675-.592 2.616 2.616 0 0 1-.978-1.488c-.226-.812-.1-1.79.366-2.908.33-.78.77-1.65 1.302-2.558a26.007 26.007 0 0 1 3.2-4.283l.44-.464s.167.174.437.464a26.148 26.148 0 0 1 3.2 4.283c.533.908.972 1.778 1.302 2.558.465 1.118.592 2.096.366 2.908z"/></svg>
+            <AirbnbIcon class="w-5 h-5" />
           </a>
 
           <!-- Instagram -->
@@ -88,7 +89,7 @@ const nextLangHref = lang === "es" ? "/en" : "/";
         </a>
 
         <!-- Hamburger -->
-        <button id="mobile-menu-btn" class="nav-icon text-white/80 hover:text-white transition-colors" aria-label="Menu">
+        <button id="mobile-menu-btn" type="button" class="nav-icon text-white/80 hover:text-white transition-colors" aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false">
           <svg class="w-6 h-6 hamburger-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
           <svg class="w-6 h-6 close-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
@@ -119,9 +120,10 @@ const nextLangHref = lang === "es" ? "/en" : "/";
   const closeIcon = btn?.querySelector('.close-icon');
 
   btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
+    const isOpen = menu?.classList.toggle('hidden') === false;
     hamburger?.classList.toggle('hidden');
     closeIcon?.classList.toggle('hidden');
+    btn?.setAttribute('aria-expanded', String(isOpen));
   });
 
   menu?.querySelectorAll('.mobile-nav-link').forEach(link => {
@@ -129,6 +131,7 @@ const nextLangHref = lang === "es" ? "/en" : "/";
       menu?.classList.add('hidden');
       hamburger?.classList.remove('hidden');
       closeIcon?.classList.add('hidden');
+      btn?.setAttribute('aria-expanded', 'false');
     });
   });
 

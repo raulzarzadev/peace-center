@@ -1,5 +1,11 @@
 {
- "name": "App",
+ "name": "Peace Center | RV Park & Suites",
+ "short_name": "Peace Center",
+ "description": "RV Park con conexiones completas y suites en La Paz, Baja California Sur.",
+ "start_url": "/",
+ "display": "standalone",
+ "theme_color": "#0f766e",
+ "background_color": "#fafaf9",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",

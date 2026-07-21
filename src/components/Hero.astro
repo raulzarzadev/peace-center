@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import heroImage from "../assets/peace-center.webp";
 import { getLangFromUrl, useTranslations, CONTACT_DATA } from "../i18n/utils";
 import WifiConnect from "./WifiConnect";
+import AirbnbIcon from "./AirbnbIcon.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -54,11 +55,11 @@ const glassBtn = "bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-w
       </a>
 
       <a href="#airbnb" class:list={[glassBtn, "inline-flex items-center justify-center gap-2"]}>
-        <svg class="w-5 h-5 flex-shrink-0 text-[#FF5A5F]" viewBox="0 0 448 512" fill="currentColor"><path d="M224 373.12c-25.24-31.67-40.08-59.43-45-83.18-22.55-88 112.61-88 90.06 0-5.45 24.25-20.29 52-45.06 83.18zm138.15 73.23c-42.06 18.31-83.67-10.88-119.3-50.47 103.9-130.07 46.11-200-18.85-200-54.72 0-85.33 46.08-85.33 73.65 0 78.68 121.42 143.32 188.33 217.89C369.85 514.72 444.42 505.47 445.45 479c.19-5.01-.69-16.19-9.68-25.83a181.69 181.69 0 0 0-73.62-6.82zM108.92 355.88c-47.42-55.7-66.61-117.64-28.57-179.67C103.7 138.82 145 116 199.9 116c50.6 0 96.42 26.45 112.78 77.12-14.9 22.78-29.7 53.1-29.7 82.44 0 43.5 29.27 80.12 57.44 108-74.37 65.97-168.54 16.45-231.5-27.68z"/></svg>
+        <AirbnbIcon class="w-5 h-5 flex-shrink-0 text-[#FF5A5F]" />
         Airbnb
       </a>
 
-      <a href="#rentas-tours" class={glassBtn}>
+      <a href="#tours" class={glassBtn}>
         {t('hero.nav_tours')}
       </a>
 
